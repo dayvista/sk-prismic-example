@@ -1,0 +1,8 @@
+<svelte:head>
+	<script
+		async
+		defer
+		src="https://static.cdn.prismic.io/prismic.js?new=true&repo=monogram"></script>
+</svelte:head>
+
+<slot />
