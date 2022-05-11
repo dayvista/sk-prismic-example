@@ -15,7 +15,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "next",
-		"@sveltejs/kit": "next",
+		"@sveltejs/kit": "^1.0.0-next.326",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
 		"@typescript-eslint/parser": "^5.10.1",
 		"eslint": "^7.32.0",
@@ -31,6 +31,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@prismicio/client": "^6.4.3"
+		"@prismicio/client": "^6.4.3",
+		"cookie": "^0.5.0"
 	}
 }
