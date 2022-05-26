@@ -1,19 +1,12 @@
-import { getRepositoryEndpoint, createClient, cookie as prismicCookie } from '@prismicio/client'
-import cookie from 'cookie'
+import * as prismic from '@prismicio/client'
 
-export const repositoryName = 'monogram'
-const endpoint = getRepositoryEndpoint(repositoryName)
+export const repositoryName = 'sam-onboarding-blog-5'
+const endpoint = prismic.getRepositoryEndpoint(repositoryName)
+const client = prismic.createClient(endpoint)
 
-const prismicClient = (request?: Request) => {
-	const client = createClient(endpoint)
-
+const prismicClient = (request) => {
 	if (request) {
-		const cookies = cookie.parse(request.headers.get('cookie'))
-		const previewRef = cookies[prismicCookie.preview]
-
-		if (previewRef) {
-			client.queryContentFromRef(previewRef)
-		}
+		client.enableAutoPreviewsFromReq(request)
 	}
 
 	return client
