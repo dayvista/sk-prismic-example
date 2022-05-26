@@ -7,11 +7,7 @@ const client = prismic.createClient(endpoint)
 
 const prismicClient = (request) => {
 	if (request) {
-		const cookies = cookie.parse(request.headers.get('cookie'))
-		const previewRef = cookies[prismic.cookie.preview]
-		if (previewRef) {
-			client.queryContentFromRef(previewRef)
-		}
+		client.enableAutoPreviewsFromReq(request)
 	}
 
 	// Pass preview ref to preview cookie
