@@ -1,10 +1,10 @@
-import * as prismic from '@prismicio/client'
+import { getRepositoryEndpoint, createClient } from '@prismicio/client'
 
-export const repositoryName = 'sam-onboarding-blog-5'
-const endpoint = prismic.getRepositoryEndpoint(repositoryName)
-const client = prismic.createClient(endpoint)
+export const repositoryName = 'monogram'
+const endpoint = getRepositoryEndpoint(repositoryName)
+const client = createClient(endpoint)
 
-const prismicClient = (request) => {
+const prismicClient = (request?: Request) => {
 	if (request) {
 		client.enableAutoPreviewsFromReq(request)
 	}
